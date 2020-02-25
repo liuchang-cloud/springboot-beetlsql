@@ -14,8 +14,6 @@ import java.util.List;
 /**
  * Created with Intellij IDEA.
  *
- * @Author: Gabriel
- * @Date: 2018-10-14
  * @Description:
  */
 @RestController
@@ -29,7 +27,7 @@ public class UserControllerForSQLManager {
 	/*
 	 * @Author Gabriel
 	 * @Description 根据主键查找记录
-	 * @Date 2018/10/16
+	 *
 	 * @Param [id] 主键
 	 * @Return void
 	 */
@@ -44,7 +42,7 @@ public class UserControllerForSQLManager {
 	/*
 	 * @Author Gabriel
 	 * @Description 查询所有
-	 * @Date 2018/10/16
+	 *
 	 * @Param []
 	 * @Return java.util.List<com.priv.gabriel.entity.User>*/
 	@RequestMapping(value = {"","/"},method = RequestMethod.GET)
@@ -54,13 +52,14 @@ public class UserControllerForSQLManager {
 		//查询该表的总数
 		//return sqlManager.allCount(User.class);
 		//获取所有数据 分页方式
+		System.out.println("呵呵");
 		return sqlManager.all(User.class,1,2);
 	}
 
 	/*
 	 * @Author Gabriel
 	 * @Description 单表条件查询
-	 * @Date 2018/10/16
+	 *
 	 * @Param []
 	 * @Return void*/
 	public void singletonTableQuery(){
@@ -70,8 +69,8 @@ public class UserControllerForSQLManager {
 
 	/*
 	 * @Author Gabriel
-	 * @Description 新增数据
-	 * @Date 2018/10/16
+	 * @Description 新增数据并
+	 *	导入到excel
 	 * @Param [user]
 	 * @Return void*/
 	@RequestMapping(value = {"","/"},method = RequestMethod.POST)
@@ -87,7 +86,7 @@ public class UserControllerForSQLManager {
 	/*
 	 * @Author Gabriel
 	 * @Description 根据主键修改
-	 * @Date 2018/10/16
+	 *
 	 * @Param [user]
 	 * @Return java.lang.String*/
 	@RequestMapping(value = {"","/"},method = RequestMethod.PUT)
@@ -105,7 +104,7 @@ public class UserControllerForSQLManager {
 	/*
 	 * @Author Gabriel
 	 * @Description 删除记录
-	 * @Date 2018/10/16
+	 *
 	 * @Param [id]
 	 * @Return java.lang.String*/
 	@RequestMapping(value = "/id",method = RequestMethod.DELETE)
@@ -119,6 +118,8 @@ public class UserControllerForSQLManager {
 
 	@RequestMapping(value = "/test",method = RequestMethod.GET)
 	public List<User> getUsersByTest(){
-		return sqlManager.select("user.selectByTest",User.class);
+		return sqlManager.select("user.selectByTest", User.class);
 	}
+
+
 }

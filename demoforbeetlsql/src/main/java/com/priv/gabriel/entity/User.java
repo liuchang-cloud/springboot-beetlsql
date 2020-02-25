@@ -58,4 +58,11 @@ public class User {
 				", age=" + age +
 				'}';
 	}
+
+	public User(long id, String username, String nickname, int age) {
+		this.id = id;
+		this.username = username;
+		this.nickname = nickname;
+		this.age = age;
+	}
 }

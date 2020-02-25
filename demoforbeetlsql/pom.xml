@@ -6,7 +6,8 @@
 	<groupId>com.priv.gabriel</groupId>
 	<artifactId>demoforbeetlsql</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+
+	<packaging>pom</packaging>
 
 	<name>demoforbeetlsql</name>
 	<description>Demo project for Spring Boot</description>
@@ -25,6 +26,17 @@
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.15</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.15</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
